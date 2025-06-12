@@ -9,3 +9,33 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.contador {
+  display: flex;
+  border-radius: 10px;
+  font-size: 60px;
+  background: rgb(45, 45, 45);
+  padding: 20px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.numero, .reloj {
+  background: #555555;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reloj i {
+  font-size: 40px;
+}

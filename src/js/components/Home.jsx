@@ -1,28 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Contador from "./SecondsCounter";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+  const [segundos, setsegundos] = useState(0);
+//Hookk
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setsegundos(anterior => anterior + 1);
+    }, 1000); //suma 1 cada 1000ms (1s)
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div>
+      <Contador segundos={segundos} />
+    </div>
+  );
 };
 
 export default Home;
